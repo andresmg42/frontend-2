@@ -9,7 +9,7 @@ import { Col, Row, FloatingLabel, Accordion, Button, Card, Form, ButtonGroup } f
 export default function Create() {
 
     const [IsEditing, setIsEditing] = useState(false)
-    const [IdEmpresa_PK, setIdEmpresa_PK] = useState('')
+    const [IdCompany_PK, setIdCompany_PK] = useState('')
     const [Razon_Social, setRazon_Social] = useState('')
     const [Representante_Legal, setRepresentante_Legal] = useState('')
     const [Actividad_Economica, setActividad_Economica] = useState('')
@@ -37,7 +37,7 @@ export default function Create() {
             if (match.params.id) {
                 const resCompanie = await getCompanieByIdF(match.params.id)
                 setIsEditing(true)
-                setIdEmpresa_PK(match.params.id)
+                setIdCompany_PK(match.params.id)
                 setRazon_Social(resCompanie.data.data[0].Razon_Social)
                 setRepresentante_Legal(resCompanie.data.data[0].Representante_Legal)
                 setActividad_Economica(resCompanie.data.data[0].Actividad_Economica)
@@ -53,7 +53,7 @@ export default function Create() {
         e.preventDefault();
         if (IsEditing) {
             const resCompanie = await EditingCompanieF(
-                IdEmpresa_PK,
+                IdCompany_PK,
                 Razon_Social,
                 Representante_Legal,
                 Actividad_Economica,
@@ -67,7 +67,7 @@ export default function Create() {
             }
         } else {
             const resCompanie = await CreateCompanieF(
-                IdEmpresa_PK,
+                IdCompany_PK,
                 Razon_Social,
                 Representante_Legal,
                 Actividad_Economica,
@@ -110,17 +110,17 @@ export default function Create() {
                                     <Row>
                                         <Col md={6}>
                                             <FloatingLabel
-                                                controlId="IdEmpresa_PK"
+                                                controlId="IdCompany_PK"
                                                 label="NIT"
                                                 className="mb-3">
                                                 <Form.Control type="text"
-                                                    name="IdEmpresa_PK"
+                                                    name="IdCompany_PK"
                                                     placeholder="NIT"
                                                     className="form-control"
                                                     required
-                                                    value={IdEmpresa_PK}
+                                                    value={IdCompany_PK}
                                                     disabled={IsEditing ? true : false}
-                                                    onChange={(e) => { setIdEmpresa_PK(e.target.value) }}
+                                                    onChange={(e) => { setIdCompany_PK(e.target.value) }}
                                                 >
                                                 </Form.Control>
                                             </FloatingLabel>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 
+
 export default class Dashboard extends Component {    
 
     render() {
@@ -11,6 +12,7 @@ export default class Dashboard extends Component {
                         <h3>Dashboard Principal</h3>
                     </div>
                     <div className="card-body">
+                        
 
                     </div>
                     <div className="card-footer">
@@ -21,3 +23,4 @@ export default class Dashboard extends Component {
         )
     }
 }
+

@@ -92,12 +92,12 @@ export const setPermissionF = async (Encryp, IdUser_PK) => {
     return res
 }
 
-export const CreateCompanieF = async (IdEmpresa_PK, Razon_Social, Representante_Legal, Actividad_Economica, Persona_Contacto, Telefono_Contacto) => {
+export const CreateCompanieF = async (IdCompany_PK, Razon_Social, Representante_Legal, Actividad_Economica, Persona_Contacto, Telefono_Contacto) => {
     const config = {
         headers: { 'x-access-token': localStorage.getItem('TOKEN') },
     }
     const data = {
-        IdEmpresa_PK: IdEmpresa_PK,
+        IdCompany_PK: IdCompany_PK,
         Razon_Social: Razon_Social,
         Representante_Legal: Representante_Legal,
         Actividad_Economica: Actividad_Economica,
@@ -108,12 +108,12 @@ export const CreateCompanieF = async (IdEmpresa_PK, Razon_Social, Representante_
     return res
 }
 
-export const EditingCompanieF = async (IdEmpresa_PK, Razon_Social, Representante_Legal, Actividad_Economica, Persona_Contacto, Telefono_Contacto) => {
+export const EditingCompanieF = async (IdCompany_PK, Razon_Social, Representante_Legal, Actividad_Economica, Persona_Contacto, Telefono_Contacto) => {
     const config = {
         headers: { 'x-access-token': localStorage.getItem('TOKEN') },
     }
     const data = {
-        IdEmpresa_PK: IdEmpresa_PK,
+        IdCompany_PK: IdCompany_PK,
         Razon_Social: Razon_Social,
         Representante_Legal: Representante_Legal,
         Actividad_Economica: Actividad_Economica,

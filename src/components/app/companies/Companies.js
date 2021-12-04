@@ -49,7 +49,7 @@ export default function Companies() {
                             <Row>
                                 {
                                     companies.map(companie => (
-                                        <Col md={3} className="p-2" key={companie.IdEmpresa_PK}>
+                                        <Col md={3} className="p-2" key={companie.IdCompany_PK}>
                                             <Card>
                                                 <Card.Header className="d-flex align-items-center">
                                                     <h6 className="text-center w-100">{companie.Razon_Social}</h6>
@@ -61,10 +61,10 @@ export default function Companies() {
                                                         </Dropdown.Toggle>
                                                         <Dropdown.Menu as={"ul"}>
                                                             <Dropdown.Item as={"li"}>
-                                                                <Link className="dropdown-item text-center" to={"/companies/edit/" + companie.IdEmpresa_PK}><i className="bi bi-pen me-3"></i>Editar</Link>
+                                                                <Link className="dropdown-item text-center" to={"/companies/edit/" + companie.IdCompany_PK}><i className="bi bi-pen me-3"></i>Editar</Link>
                                                             </Dropdown.Item>
                                                             <Dropdown.Item as={"li"}>
-                                                                <Link className="dropdown-item text-center" onClick={() => { setIdDelete(companie.IdEmpresa_PK); setModalDelete(true) }} to="/companies"><i className="bi bi-trash me-3"></i>Borrar</Link>
+                                                                <Link className="dropdown-item text-center" onClick={() => { setIdDelete(companie.IdCompany_PK); setModalDelete(true) }} to="/companies"><i className="bi bi-trash me-3"></i>Borrar</Link>
                                                             </Dropdown.Item>
                                                         </Dropdown.Menu>
                                                     </Dropdown>
@@ -72,7 +72,7 @@ export default function Companies() {
                                                 <Card.Body>
                                                     <p>
                                                         <span className="fw-bold">NIT: </span>
-                                                        <span>{companie.IdEmpresa_PK}</span>
+                                                        <span>{companie.IdCompany_PK}</span>
                                                     </p>
                                                     <p>
                                                         <span className="fw-bold">Representante Legal: </span>

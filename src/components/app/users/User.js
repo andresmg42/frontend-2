@@ -52,7 +52,7 @@ export default function User() {
         const resCompanies = await getCompaniesF()
         if (resCompanies.data.status === 200) {
             setCompanies(resCompanies.data.data)
-            setIdCompany_FK(resCompanies.data.data[0].IdEmpresa_PK)
+            setIdCompany_FK(resCompanies.data.data[0].IdCompany_PK)
         } else {
             toast.error(resCompanies.data.msj)
         }
@@ -73,7 +73,7 @@ export default function User() {
 
     const CreateUser = () => {
         setIdUser_PK('')
-        setIdCompany_FK(companies[0].IdEmpresa_PK)
+        setIdCompany_FK(companies[0].IdCompany_PK)
         setUserName('')
         setUserLastName('')
         setUserEmail('')
@@ -553,9 +553,9 @@ export default function User() {
                                             companies.map(companie => {
                                                 return (
                                                     <option
-                                                        value={companie.IdEmpresa_PK}
-                                                        key={companie.IdEmpresa_PK}>
-                                                        {companie.IdEmpresa_PK}
+                                                        value={companie.IdCompany_PK}
+                                                        key={companie.IdCompany_PK}>
+                                                        {companie.IdCompany_PK}
                                                     </option>
                                                 )
                                             })
